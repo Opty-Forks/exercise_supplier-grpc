@@ -1,58 +1,59 @@
 package pt.tecnico.supplier.domain;
 
-/**
- * Product entity. Only the product quantity is mutable so its get/set methods
- * are synchronized.
- */
+/** Product entity. Only the product quantity is mutable so its get/set methods are synchronized. */
 public class Product {
-	/** Product identifier. */
-	private String productId;
-	/** Product description. */
-	private String description;
-	/** Available quantity of product. */
-	private volatile int quantity;
-	/** Price of product */
-	private int price;
+  /** Product identifier. */
+  private final String productId;
+  /** Product description. */
+  private final String description;
+  /** Available quantity of product. */
+  private final int quantity;
+  /** Price of product */
+  private final int price;
+  /** Likes of product */
+  private final int likes;
 
-	/** Create a new product */
-	public Product(String pid, String description, int quantity, int price) {
-		this.productId = pid;
-		this.description = description;
-		this.quantity = quantity;
-		this.price = price;
-	}
+  /** Create a new product */
+  public Product(String pid, String description, int quantity, int price, int likes) {
+    this.productId = pid;
+    this.description = description;
+    this.quantity = quantity;
+    this.price = price;
+    this.likes = likes;
+  }
 
-	public String getId() {
-		return productId;
-	}
+  public String getId() {
+    return productId;
+  }
 
-	public String getDescription() {
-		return description;
-	}
+  public String getDescription() {
+    return description;
+  }
 
-	public int getPrice() {
-		return price;
-	}
+  public int getPrice() {
+    return price;
+  }
 
-	/** Synchronized locks object before returning quantity */
-	public synchronized int getQuantity() {
-		return quantity;
-	}
+  public int getQuantity() {
+    return quantity;
+  }
 
-	/** Synchronized locks object before setting quantity */
-	public synchronized void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+  public int getLikes() {
+    return likes;
+  }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Product [productId=").append(productId);
-		builder.append(", description=").append(description);
-		builder.append(", quantity=").append(quantity);
-		builder.append(", price=").append(price);
-		builder.append("]");
-		return builder.toString();
-	}
-
+  @Override
+  public String toString() {
+    return "Product [productId="
+        + productId
+        + ", description="
+        + description
+        + ", quantity="
+        + quantity
+        + ", price="
+        + price
+        + ", likes="
+        + likes
+        + "]";
+  }
 }

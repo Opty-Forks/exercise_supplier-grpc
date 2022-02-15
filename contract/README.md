@@ -2,9 +2,7 @@
 
 This small module contains the protocol buffers (protobuf) definition of the gRPC application.
 
-The interface is shared by the server, that implements it, and
-by the client, that needs it to make remote calls.
-
+The interface is shared by the server, that implements it, and by the client, that needs it to make remote calls.
 
 ## Instructions for using Maven
 
@@ -22,7 +20,6 @@ To install the module and make it available as a dependency in the local reposit
 mvn install
 ```
 
-
 ## To configure the Maven project in Eclipse
 
 'File', 'Import...', 'Maven'-'Existing Maven Projects'
@@ -31,7 +28,6 @@ mvn install
 
 Check that the desired POM is selected and 'Finish'.
 
-
-----
+---
 
 [SD Faculty](mailto:leic-sod@disciplinas.tecnico.ulisboa.pt)
